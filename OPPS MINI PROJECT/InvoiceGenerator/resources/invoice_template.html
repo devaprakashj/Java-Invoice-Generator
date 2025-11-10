@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .customer-info {
+            margin-bottom: 20px;
+        }
+        .invoice-details {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .totals {
+            float: right;
+            width: 300px;
+        }
+        .totals table {
+            width: 100%;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{COMPANY_NAME}</h1>
+        <p>{COMPANY_ADDRESS}</p>
+        <p>Phone: {COMPANY_PHONE}</p>
+        <p>Email: {COMPANY_EMAIL}</p>
+    </div>
+
+    <div class="customer-info">
+        <h3>Bill To:</h3>
+        <p>{CUSTOMER_NAME}</p>
+        <p>{CUSTOMER_ADDRESS}</p>
+        <p>Phone: {CUSTOMER_PHONE}</p>
+        <p>Email: {CUSTOMER_EMAIL}</p>
+    </div>
+
+    <div class="invoice-details">
+        <p><strong>Invoice Number:</strong> {INVOICE_NUMBER}</p>
+        <p><strong>Date:</strong> {INVOICE_DATE}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {INVOICE_ITEMS}
+        </tbody>
+    </table>
+
+    <div class="totals">
+        <table>
+            <tr>
+                <td><strong>Subtotal:</strong></td>
+                <td>{SUBTOTAL}</td>
+            </tr>
+            <tr>
+                <td><strong>GST (18%):</strong></td>
+                <td>{TAX}</td>
+            </tr>
+            <tr>
+                <td><strong>Total:</strong></td>
+                <td>{TOTAL}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>Thank you for your business!</p>
+    </div>
+</body>
+</html>
